@@ -5,13 +5,14 @@ import javax.annotation.Nullable;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
+import org.intellij.lang.annotations.MagicConstant;
 import react4j.dom.events.DragEventHandler;
 import react4j.dom.events.FocusEventHandler;
 import react4j.dom.events.FormEventHandler;
 import react4j.dom.events.KeyboardEventHandler;
 import react4j.dom.events.MouseEventHandler;
 import react4j.dom.events.TouchEventHandler;
-import react4j.dom.proptypes.html.attributeTypes.FormMethod;
+import react4j.dom.proptypes.html.attributeTypes.ButtonType;
 import react4j.dom.proptypes.html.attributeTypes.OnOff;
 import react4j.dom.proptypes.html.attributeTypes.Target;
 
@@ -40,9 +41,9 @@ public class FormProps
 
   @JsOverlay
   @Nonnull
-  public final FormProps autoComplete( OnOff s )
+  public final FormProps autoComplete( @Nonnull @MagicConstant( valuesFromClass = OnOff.class ) final String s )
   {
-    setAutoComplete( s.name() );
+    setAutoComplete( s );
     return self();
   }
 
@@ -56,9 +57,9 @@ public class FormProps
 
   @JsOverlay
   @Nonnull
-  public final FormProps formMethod( FormMethod s )
+  public final FormProps formMethod( @Nonnull @MagicConstant( valuesFromClass = ButtonType.class ) final String s )
   {
-    setFormMethod( s.name() );
+    setFormMethod( s );
     return self();
   }
 
@@ -80,17 +81,9 @@ public class FormProps
 
   @JsOverlay
   @Nonnull
-  public final FormProps formTarget( Target t )
+  public final FormProps formTarget( @Nonnull @MagicConstant( valuesFromClass = Target.class ) final String t )
   {
-    setFormTarget( t.name() );
-    return self();
-  }
-
-  @JsOverlay
-  @Nonnull
-  public final FormProps formTarget( String s )
-  {
-    setFormTarget( s );
+    setFormTarget( t );
     return self();
   }
 

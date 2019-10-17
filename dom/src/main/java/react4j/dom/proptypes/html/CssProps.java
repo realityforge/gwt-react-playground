@@ -5,6 +5,7 @@ import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import org.intellij.lang.annotations.MagicConstant;
 import react4j.dom.proptypes.cssPropertyTypes.AnimationFillMode;
 import react4j.dom.proptypes.cssPropertyTypes.Visibility;
 
@@ -25,9 +26,10 @@ public class CssProps
   public native void setAnimationFillMode( String mode );
 
   @JsOverlay
-  public final CssProps animationFillMode( @Nonnull final AnimationFillMode mode )
+  @Nonnull
+  public final CssProps animationFillMode( @Nonnull @MagicConstant( valuesFromClass = AnimationFillMode.class ) final String mode )
   {
-    setAnimationFillMode( mode.name() );
+    setAnimationFillMode( mode );
     return this;
   }
 
@@ -4236,9 +4238,9 @@ public class CssProps
    */
   @JsOverlay
   @Nonnull
-  public final CssProps visibility( @Nonnull final Visibility visibility )
+  public final CssProps visibility( @Nonnull @MagicConstant( valuesFromClass = Visibility.class ) final String visibility )
   {
-    setVisibility( visibility.name() );
+    setVisibility( visibility );
     return this;
   }
 
